@@ -36,17 +36,11 @@ namespace TravelFriend.Windows.Database
             set
             {
                 _account = value;
-                OnAccountChanged();
             }
         }
-
         /// <summary>
-        /// 监听用户是否发生变化
+        /// 用户昵称
         /// </summary>
-        public event EventHandler AccountChanged;
-        protected virtual void OnAccountChanged()
-        {
-            AccountChanged?.Invoke(this, null);
-        }
+        public string NickName { get; set; }
     }
 }

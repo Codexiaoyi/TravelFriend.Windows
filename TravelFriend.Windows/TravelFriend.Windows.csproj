@@ -6,44 +6,79 @@
     <UseWPF>true</UseWPF>
   </PropertyGroup>
 
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+    <OutputPath>bin\Release\</OutputPath>
+  </PropertyGroup>
+
   <ItemGroup>
     <None Remove="Resources\Add.png" />
     <None Remove="Resources\Close.png" />
     <None Remove="Resources\DefaultBigAvatar.png" />
+    <None Remove="Resources\DefaultTeamAvatar.png" />
     <None Remove="Resources\DropDown.png" />
     <None Remove="Resources\DropUp.png" />
+    <None Remove="Resources\famale.png" />
     <None Remove="Resources\Gray\Close.png" />
+    <None Remove="Resources\Gray\Delete.png" />
+    <None Remove="Resources\Gray\Left.png" />
     <None Remove="Resources\Gray\Max.png" />
     <None Remove="Resources\Gray\Message.png" />
     <None Remove="Resources\Gray\Min.png" />
     <None Remove="Resources\Gray\NoMax.png" />
+    <None Remove="Resources\Gray\NoUploadData.png" />
+    <None Remove="Resources\Gray\Pause.png" />
+    <None Remove="Resources\Gray\Play.png" />
+    <None Remove="Resources\Gray\Right.png" />
     <None Remove="Resources\Gray\Search.png" />
+    <None Remove="Resources\Gray\Send.png" />
     <None Remove="Resources\Gray\Setting.png" />
+    <None Remove="Resources\Gray\Team.png" />
+    <None Remove="Resources\Gray\Thumbnail.png" />
     <None Remove="Resources\Gray\ToggleDown.png" />
     <None Remove="Resources\Gray\ToggleUp.png" />
+    <None Remove="Resources\Green\Birthday.png" />
+    <None Remove="Resources\Green\Close.png" />
     <None Remove="Resources\Green\Home.png" />
+    <None Remove="Resources\Green\Left.png" />
+    <None Remove="Resources\Green\Loading.png" />
     <None Remove="Resources\Green\Logo.png" />
     <None Remove="Resources\Green\Min.png" />
+    <None Remove="Resources\Green\Pause.png" />
+    <None Remove="Resources\Green\Play.png" />
+    <None Remove="Resources\Green\Return.png" />
+    <None Remove="Resources\Green\Right.png" />
+    <None Remove="Resources\Green\Send.png" />
+    <None Remove="Resources\Green\Signature.png" />
     <None Remove="Resources\Green\Team.png" />
+    <None Remove="Resources\Green\Transport.png" />
     <None Remove="Resources\Green\Travel.png" />
     <None Remove="Resources\Home.png" />
+    <None Remove="Resources\Image.png" />
     <None Remove="Resources\LoginAccount.png" />
     <None Remove="Resources\LoginPassword.png" />
     <None Remove="Resources\Logo.png" />
+    <None Remove="Resources\male.png" />
     <None Remove="Resources\Min.png" />
     <None Remove="Resources\Min_Green.png" />
     <None Remove="Resources\Team.png" />
+    <None Remove="Resources\Transport.png" />
     <None Remove="Resources\Travel.png" />
+    <None Remove="Resources\Video.png" />
+    <None Remove="Resources\Watch.png" />
     <None Remove="Resources\zhangzhier.png" />
+    <None Remove="Team\TeamDetail" />
   </ItemGroup>
 
   <ItemGroup>
     <PackageReference Include="MaterialDesignThemes" Version="3.1.1" />
+    <PackageReference Include="Microsoft.AspNetCore.SignalR.Client" Version="3.1.5" />
+    <PackageReference Include="System.Management" Version="4.7.0" />
   </ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\TravelFriend.Windows.Database\TravelFriend.Windows.Database.csproj" />
     <ProjectReference Include="..\TravelFriend.Windows.Http\TravelFriend.Windows.Http.csproj" />
+    <ProjectReference Include="..\TravelFriend.Windows.RabbitMQ\TravelFriend.Windows.RabbitMQ.csproj" />
   </ItemGroup>
 
   <ItemGroup>
@@ -56,7 +91,19 @@
     <Resource Include="Resources\DefaultBigAvatar.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
+    <Resource Include="Resources\DefaultTeamAvatar.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\famale.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
     <Resource Include="Resources\Gray\Close.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\Gray\Delete.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\Gray\Left.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
     <Resource Include="Resources\Gray\Max.png">
@@ -71,16 +118,43 @@
     <Resource Include="Resources\Gray\NoMax.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
+    <Resource Include="Resources\Gray\NoUploadData.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\Gray\Pause.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\Gray\Play.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\Gray\Right.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
     <Resource Include="Resources\Gray\Search.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
+    <Resource Include="Resources\Gray\Send.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
     <Resource Include="Resources\Gray\Setting.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\Gray\Team.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\Gray\Thumbnail.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
     <Resource Include="Resources\Gray\ToggleDown.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
     <Resource Include="Resources\Gray\ToggleUp.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\Green\Birthday.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\Green\Close.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
     <Resource Include="Resources\Green\DropDown.png">
@@ -90,6 +164,12 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
     <Resource Include="Resources\Green\Home.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\Green\Left.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\Green\Loading.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
     <Resource Include="Resources\Green\LoginAccount.png">
@@ -104,7 +184,28 @@
     <Resource Include="Resources\Green\Min.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
+    <Resource Include="Resources\Green\Pause.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\Green\Play.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\Green\Return.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\Green\Right.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\Green\Send.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\Green\Signature.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
     <Resource Include="Resources\Green\Team.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\Green\Transport.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
     <Resource Include="Resources\Green\Travel.png">
@@ -113,7 +214,13 @@
     <Resource Include="Resources\Home.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
+    <Resource Include="Resources\Image.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
     <Resource Include="Resources\Logo.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\male.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
     <Resource Include="Resources\Min.png">
@@ -122,12 +229,36 @@
     <Resource Include="Resources\Team.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
+    <Resource Include="Resources\Transport.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
     <Resource Include="Resources\Travel.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\Video.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\Watch.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
     <Resource Include="Resources\zhangzhier.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="Main\SettingPopup.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Team\TeamPage - 复制.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Page Update="Main\SettingPopup.xaml">
+      <SubType>Designer</SubType>
+    </Page>
   </ItemGroup>
 
 </Project>

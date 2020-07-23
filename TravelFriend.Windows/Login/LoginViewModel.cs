@@ -18,17 +18,18 @@ namespace TravelFriend.Windows
     {
         public LoginViewModel()
         {
-            var user = GetUser();
+            var user = UserManager.GetFirstUser();
             if (user != null && !string.IsNullOrEmpty(user.UserName))
             {
                 UserName = user.UserName;
                 Password = user.Password;
                 NickName = user.NickName;
-                if (user.Avatar.Length != 8)
+                if (user.Avatar != null)
                 {
                     Avatar = ImageHelper.ByteArrayToBitmapImage(user.Avatar);
                 }
                 IsLoginEnable = true;
+                IsRememberPassword = user.IsRememberPassword;
             }
         }
 
@@ -102,13 +103,18 @@ namespace TravelFriend.Windows
             }
         }
 
-        /// <summary>
-        /// 获取本地数据库中的第一个用户
-        /// </summary>
-        /// <returns></returns>
-        private User GetUser()
+        private bool _isRememberPassword = false;
+        public bool IsRememberPassword
         {
-            return DatabaseManager.GetFirstUser();
+            get
+            {
+                return _isRememberPassword;
+            }
+            set
+            {
+                _isRememberPassword = value;
+                Change(nameof(IsRememberPassword));
+            }
         }
     }
 }

@@ -1,0 +1,40 @@
+﻿<UserControl x:Class="TravelFriend.Windows.Transport.TransportPage"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:TravelFriend.Windows.Transport"
+             mc:Ignorable="d">
+    <Grid Background="White">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition />
+        </Grid.RowDefinitions>
+        <Border Grid.Row="1" Height="1" Background="{StaticResource DarkGray}" Margin="20 15 20 0"/>
+        <Border Grid.Row="2" Height="30" Background="{StaticResource LightGray}" BorderThickness="0" Margin="20 20 20 0">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                    <ColumnDefinition Width="250"/>
+                </Grid.ColumnDefinitions>
+                <Border Margin="10 0 0 0" Width="14" Height="14" Background="White"/>
+                <CheckBox IsChecked="{Binding IsRememberPassword}" Margin="10 0 0 0" Foreground="{StaticResource LightGray}" BorderBrush="{StaticResource LightGray}" Background="{StaticResource MainGreen}" Style="{StaticResource MaterialDesignCheckBox}" VerticalAlignment="Center" HorizontalAlignment="Left" Cursor="Hand"/>
+                <TextBlock Grid.Column="1" Margin="10 0 0 0" Text="{DynamicResource TransportName}" FontSize="14" FontWeight="Bold" Foreground="{StaticResource DarkGray}" VerticalAlignment="Center" HorizontalAlignment="Left"/>
+                <TextBlock Grid.Column="2" Margin="5 0 0 0" Text="{DynamicResource UploadTo}" FontSize="14" FontWeight="Bold" Foreground="{StaticResource DarkGray}" VerticalAlignment="Center" HorizontalAlignment="Left"/>
+                <TextBlock Grid.Column="3" Margin="5 0 0 0" Text="{DynamicResource Progress}" FontSize="14" FontWeight="Bold" Foreground="{StaticResource DarkGray}" VerticalAlignment="Center" HorizontalAlignment="Left"/>
+            </Grid>
+        </Border>
+        <Grid Grid.Row="3" Margin="20 0" HorizontalAlignment="Stretch">
+            <ListBox x:Name="UploadList" HorizontalContentAlignment="Stretch">
+            </ListBox>
+        </Grid>
+        <StackPanel x:Name="EmptyTip" Grid.Row="3" Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Center" Visibility="Collapsed">
+            <Image Source="/Resources/Gray/NoUploadData.png" Width="70" Height="70"/>
+            <TextBlock Text="{DynamicResource NoUploadData}" Foreground="{StaticResource LightGray}" HorizontalAlignment="Center" Margin="0 10 0 0"/>
+        </StackPanel>
+    </Grid>
+</UserControl>
